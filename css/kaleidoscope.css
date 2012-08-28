@@ -7982,11 +7982,12 @@ body {
   right: 0;
   bottom: 0;
   z-index: 1;
-  color: #668;
+  color: #666;
+  background-color: #eee;
   text-decoration: none;
-  font-family: sans serif;
-  opacity: 0.3;
-  padding: 0.4em; }
+  font-family: Helvetica;
+  border-top-left-radius: 0.6em;
+  opacity: 0.8;
+  padding: 0.6em; }
   #fork:hover {
-    opacity: 1;
-    text-decoration: underline; }
+    opacity: 0.9; }

@@ -97,13 +97,14 @@ body {
     bottom: 0;
     z-index: 1;
     color: #666;
-    background-color:# #222;
+    background-color: #eee;
     text-decoration: none;
-    font-family: sans serif;
-    opacity: 0.3;
-    padding: 0.4em;
+    font-family: Helvetica;
+	border-top-left-radius: 0.6em;
+    opacity: 0.8;
+    padding: 0.6em;
     
     &:hover {
-	opacity: 1;
+	opacity: 0.9;
     }
 }

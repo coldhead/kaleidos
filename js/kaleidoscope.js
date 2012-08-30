@@ -1,12 +1,14 @@
 $(document).ready(function () {
 
-    // Crude $_GET style array of query string parameters.
     var parameters = (function (src) {
-	var params = src.split(/&/);
-	$.each(params, function (i, p) {
-	    p = p.replace(/\/$/, '').split(/=/);
-	    var k = p[0].replace(/^\?/, '');
-	    params[k] = p[1] || true;
+	var params = {}, qryStr = src.split('?')[1];
+        if (!qryStr) {
+          return params;    
+        }
+	$.each(qryStr.split('&'), function (i, p) {
+	    ps = p.replace(/\/$/, '').split('=');
+	    var k = ps[0].replace(/^\?/, '');
+	    params[k] = ps[1] || true;
 	});
 
 	return params;

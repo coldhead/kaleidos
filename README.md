@@ -3,6 +3,8 @@
 A simple kaleidoscope effect produced with a bunch of SASS-powered
 CSS3 transforms.
 
+See it in action here: http://coldhead.github.com/kaleidos/
+
 ## Parameters
 You can pass parameters via the query string: e.g.
 ?n=13&src=http://someurl/someimage.png

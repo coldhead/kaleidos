@@ -45,6 +45,16 @@ body {
 	height: 100%;
 	width: 50%;
 	@include transform-origin(right, top);
+
+	.image {
+	    position: relative;
+	    top: 0;
+	    left: 100%;
+	    height: 100%;
+	    width: 100%;
+	    background-image: url(../img/butterfly-montage.jpg); // Apologies to Damien Hirst.
+	    @include transform-origin();
+	 }
     }
 
     $max_segments: 32;
@@ -59,29 +69,21 @@ body {
 	&.n#{$segments} {
 
 	    .tile {
+	        display: block;
+
 		@while $i < $segments * 2 {
 		    &.t#{$i} {
-			display: block;
 			@include transform-rotate($angle + $step);
 		    }
 
 		    &.t#{$i+1} {
-			display: block;
 			@include transform-mirror-rotate($angle + $step);
 		    }
 
 		    $angle: $angle + ($step * 2);
 		    $i: $i + 2;
 		}
-
 		.image {
-		    position: relative;
-		    top: 0;
-		    left: 100%;
-		    height: 100%;
-		    width: 100%;
-		    background-image: url(../img/butterfly-montage.jpg); // Apologies to Damien Hirst.
-		    @include transform-origin();
 		    @include transform-rotate($step);
 		}
 	    }

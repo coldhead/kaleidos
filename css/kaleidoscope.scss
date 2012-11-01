@@ -93,9 +93,9 @@ body {
     
 }
 
-#fork {
+#fork, #fullscreen {
     position: absolute;
-    right: 0;
+    right: 76px;
     bottom: 0;
     z-index: 1;
     color: #666;
@@ -109,4 +109,11 @@ body {
     &:hover {
 	opacity: 0.9;
     }
+}
+
+#fullscreen {
+  right: 0;
+  border-top-left-radius: 0;
+  border-left: 1px solid #666; 
+  cursor: pointer;
 }

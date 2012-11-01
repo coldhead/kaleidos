@@ -75,6 +75,18 @@ $(document).ready(function () {
     }
 
     $image.css('background-position', [nx + "px", ny + "px"].join(' '));
+  })
+  
+  // Request Fullscreen for maximum LSD effect
+  var $fullscreen = $('#fullscreen');
+  var k = $kaleidescope[0];
+  
+  $fullscreen.click(function(){
+    if (document.fullscreenEnabled || document.mozFullScreenEnabled || 
+        document.webkitFullscreenEnabled) {
+      if (k.requestFullscreen)       k.requestFullscreen();
+      if (k.mozRequestFullScreen)    k.mozRequestFullScreen();
+      if (k.webkitRequestFullscreen) k.webkitRequestFullscreen();
+    }
   });
-
 });

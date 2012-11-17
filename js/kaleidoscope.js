@@ -112,8 +112,8 @@ $(document).ready(function () {
 
   function animate() {
     var time = new Date().getTime() * ['.000' + auto_speed].join();
-    var auto_x = Math.sin( time ) * document.width;
-    var auto_y = Math.cos( time ) * document.height;
+    var auto_x = Math.sin( time ) * document.body.clientWidth;
+    var auto_y = Math.cos( time ) * document.body.clientHeight;
 
     move( auto_x, auto_y );
     if (auto) requestAnimFrame(animate);

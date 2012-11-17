@@ -74,7 +74,8 @@ $(document).ready(function () {
       }
     }
 
-    $image.css('background-position', [nx + "px", ny + "px"].join(' '));
+    move( nx, ny );
+    auto = false;
   })
   
   // Request Fullscreen for maximum LSD effect
@@ -89,4 +90,48 @@ $(document).ready(function () {
       if (k.webkitRequestFullscreen) k.webkitRequestFullscreen();
     }
   });
+
+  // Animate all the things!
+  window.requestAnimFrame = (function( window ) {
+    var suffix = "equestAnimationFrame",
+      rAF = [ "r", "webkitR", "mozR", "msR", "oR" ].filter(function( val ) {
+        return val + suffix in window;
+      })[ 0 ] + suffix;
+
+    return window[ rAF ]  || function( callback, element ) {
+      window.setTimeout(function() {
+        callback( +new Date );
+      }, 1000 / 60);
+    };
+  })( window );
+
+  var auto_x = 0;
+  var auto_y = 0;
+  var auto = false;
+  var auto_speed = parameters['auto_speed'] || 3;
+
+  function animate() {
+    var time = new Date().getTime() * ['.000' + auto_speed].join();
+    var auto_x = Math.sin( time ) * document.body.clientWidth;
+    var auto_y = Math.cos( time ) * document.body.clientHeight;
+
+    move( auto_x, auto_y );
+    if (auto) requestAnimFrame(animate);
+  }
+
+  function move( x, y ) {
+    $image.css('background-position', [x + "px", y + "px"].join(' '));
+  }
+
+  // Timer to check for inactivity
+  (function timer() {
+    setTimeout(function() {
+      timer();
+      if (!auto) {
+        auto = true;
+      } else {
+        animate();
+      }
+    }, 5000 );
+  })();
 });

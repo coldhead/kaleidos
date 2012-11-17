@@ -111,7 +111,7 @@ $(document).ready(function () {
   var auto_speed = parameters['auto_speed'] || 3;
 
   function animate() {
-    var time = new Date().getTime() * ['.000' + speed].join();
+    var time = new Date().getTime() * ['.000' + auto_speed].join();
     var auto_x = Math.sin( time ) * document.width;
     var auto_y = Math.cos( time ) * document.height;
 

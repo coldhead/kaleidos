@@ -37,5 +37,4 @@ ever heard of such a thing, really.
 
 ## TODO
 * Some kind of build process like all the cool kids are doing.
-* Hands-free animation for mobile devices and lazy people.
-* Whatever @miketaylr requires for Opera.
+

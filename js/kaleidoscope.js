@@ -32,9 +32,10 @@ $( document ).ready( function () {
     }
   }
 
-  var $kaleidescope = $( '.kaleidoscope' );
-  $kaleidescope.addClass( 'n' + n );
-  $kaleidescope.append( tiles );
+  var $kaleidescope = $( '.kaleidoscope' )
+    .addClass( 'n' + n )
+    .append( tiles );
+
   var $image = $kaleidescope.find( '.image' );
 
   var $fullscreen = $( '#fullscreen' );
@@ -43,7 +44,7 @@ $( document ).ready( function () {
   // PARAMETER: *src* is the URL for an alternate image.
   var src = parameters.src;
   if ( src ) {
-    $image.css( 'background-image', [ 'url(', src, ')' ].join( '' ) );
+    $image.css( 'background-image', [ 'url(', decodeURIComponent( src ), ')' ].join( '' ) );
   }
 
   // PARAMETER: *clean* hides the Github link.

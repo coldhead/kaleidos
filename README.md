@@ -1,9 +1,13 @@
-# Kaleidos: CSS3 Kaleidoscope Effects
+# Kaleidos: CSS Kaleidoscope Effects
 
 A simple kaleidoscope effect produced with a bunch of SASS-powered
-CSS3 transforms.
+CSS rotation and scale transforms.
 
-See it in action here: http://coldhead.github.com/kaleidos/
+See it in action here: http://coldhead.github.com/kaleidos/ or here
+http://gif.ly/
+
+**Suddenly, Convenience!** Add it to your browser here:
+https://github.com/miketaylr/kaleidos-extension/
 
 ## Parameters
 You can pass parameters via the query string: e.g.
@@ -38,3 +42,9 @@ ever heard of such a thing, really.
 ## TODO
 * Some kind of build process like all the cool kids are doing.
 
+## Terms & Conditions
+
+This project is dual licenced under the MIT and GPL licenses because
+[that's what Cowboy said to
+do](http://benalman.com/news/2010/02/on-licensing-my-code/). I hope
+that's okay with everyone.

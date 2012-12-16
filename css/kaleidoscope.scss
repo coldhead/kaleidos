@@ -93,27 +93,50 @@ body {
     
 }
 
-#fork, #fullscreen {
+nav {
     position: absolute;
-    right: 76px;
-    bottom: 0;
+    left: 0;
+    top: 0;
     z-index: 1;
     color: #666;
-    background-color: #eee;
     text-decoration: none;
     font-family: Helvetica;
-	border-top-left-radius: 0.6em;
-    opacity: 0.8;
-    padding: 0.6em;
-    
-    &:hover {
-	opacity: 0.9;
-    }
-}
+    cursor: pointer;
 
-#fullscreen {
-  right: 0;
-  border-top-left-radius: 0;
-  border-left: 1px solid #666; 
-  cursor: pointer;
+    body.clean & {
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    a {
+        color: #666;
+    	text-decoration: none;
+    }
+
+    & > * {
+	float: left;
+	padding: 0.6em;
+
+        background-color: #eee;
+        opacity: 0.8;
+
+    	&:hover {
+            opacity: 0.9;
+        }
+
+	&:nth-child(n + 2) {
+	    border-left: 1px solid #666;
+	}
+
+	&:first-child {
+	    border-bottom-left-radius: 0.6em;
+	}
+
+	&:last-child {
+	    border-bottom-right-radius: 0.6em;
+	}
+    }
 }

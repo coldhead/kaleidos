@@ -114,7 +114,7 @@ $( document ).ready( function () {
   })( window );
 
   function animate() {
-    var time = new Date().getTime() * [ '.000', s ].join( '' );
+    var time = new Date().getTime() * [ '.0000', s ].join( '' );
     auto_x = Math.sin( time ) * document.body.clientWidth;
     auto_y++;
 

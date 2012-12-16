@@ -50,7 +50,7 @@ $( document ).ready( function () {
   // PARAMETER: *clean* hides the Github and fullscreen links.
   var clean = parameters.clean;
   if ( clean ) {
-    $( '#fork, #fullscreen' ).hide();
+    $( 'body' ).addClass('clean');
   }
 
   // PARAMETER (undocumented): *mode* changes the animation style.

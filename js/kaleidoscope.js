@@ -47,10 +47,10 @@ $( document ).ready( function () {
     $image.css( 'background-image', [ 'url(', decodeURIComponent( src ), ')' ].join( '' ) );
   }
 
-  // PARAMETER: *clean* hides the Github link.
+  // PARAMETER: *clean* hides the Github and fullscreen links.
   var clean = parameters.clean;
   if ( clean ) {
-    $( '#fork' ).hide();
+    $( '#fork, #fullscreen' ).hide();
   }
 
   // PARAMETER (undocumented): *mode* changes the animation style.

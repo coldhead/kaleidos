@@ -102,7 +102,7 @@ $( document ).ready( function () {
   // Animate all the things!
   window.requestAnimFrame = ( function( window ) {
     var suffix = "equestAnimationFrame",
-      rAF = [ "r", "webkitR", "mozR", "msR", "oR" ].filter( function( val ) {
+      rAF = [ "r", "webkitR", "mozR", "msR" ].filter( function( val ) {
         return val + suffix in window;
       })[ 0 ] + suffix;
 

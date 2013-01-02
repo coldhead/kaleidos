@@ -88,6 +88,31 @@ $( document ).ready( function () {
     move( nx, ny );
     auto = auto_throttle = false;
   });
+  
+  // An alternate image can be supplied via Dragon Drop.
+  if ( 'draggable' in document.createElement('b') && window.FileReader ) {
+    k.ondragenter = k.ondragover = function( e ) {
+      e.preventDefault();
+    };
+  
+    k.ondrop = function( e ) {
+      readFile( e.dataTransfer.files[0] );
+      e.preventDefault();
+    };
+  }
+  
+  function readFile( file ) {
+    var r = new FileReader();
+    if ( !file.type.match('image\/.*') ) {
+      return false;
+    }
+    
+    r.onload = function( e ) {
+      $image.css( 'background-image', [ 'url(', e.target.result, ')' ].join( '' ) );
+    };
+    
+    r.readAsDataURL( file );
+  } 
 
   // Request Fullscreen for maximum LSD effect
   $fullscreen.click( function() {

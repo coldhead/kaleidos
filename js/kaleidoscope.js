@@ -23,7 +23,7 @@ $( document ).ready( function () {
   // PARAMETER: *s* is the speed of the automatic timeout animation.
   var s = parameters.s || 3;
 
-  // PARAMETER: *n* is the number of segements.
+  // PARAMETER: *n* is the number of segments.
   var n = ~~parameters.n || 7;
   var tiles = '';
   if ( n ) {

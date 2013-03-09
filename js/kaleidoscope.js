@@ -53,6 +53,13 @@ $( document ).ready( function () {
     $( 'body' ).addClass('clean');
   }
 
+  // PARAMETER: *opacity* sets opacity (0.0 -> 1.0).
+  var opacity = parseFloat( parameters.opacity );
+  if ( opacity ) {
+    $kaleidescope.css('opacity', 0).fadeTo( 3000, opacity );
+  }
+
+
   // PARAMETER (undocumented): *mode* changes the animation style.
   var mode = ~~parameters.mode || 2;
 

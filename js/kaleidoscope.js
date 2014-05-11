@@ -95,6 +95,46 @@ $( document ).ready( function () {
     move( nx, ny );
     auto = auto_throttle = false;
   });
+
+  //----------------- CODE FOR DEVICE ORIENTATION ------------------
+
+  $deviceOrientation = $('#device-orientation');
+  var $orientationOn = true;
+
+  if(! window.DeviceOrientationEvent){
+    return;
+  }
+
+  var deviceOrientation = function(){
+    //Device orientation when the user activates it.
+    $deviceOrientation.click(function(){
+      $(window).on('deviceorientation', function(event){
+        var movementComputer = function(){
+          $('.image').css({
+            /* Using 25 and 20 make it pretty psychedelic but using lower values 
+            didn't show all the colors which I thought was a shame */
+            'backgroundPositionX': 25 * event.originalEvent.beta,
+            'backgroundPositionY': 20 * event.originalEvent.gamma
+          });
+        }
+
+        if($orientationOn === true){
+          movementComputer();
+          //$orientationOn = false;
+          $deviceOrientation.html("Don't do drugs"); 
+        // This part doesn't work.
+        // } else if($orientationOn === false){
+        //   $deviceOrientation.html("LSD Effect");
+        //   $orientationOn = true;
+       }
+      });
+    });
+  } //End of device orientation function.
+
+  deviceOrientation();  
+
+  //--------------- END OF DEVICE ORIENTATION PART ------------------
+
   
   // An alternate image can be supplied via Dragon Drop.
   if ( 'draggable' in document.createElement('b') && window.FileReader ) {

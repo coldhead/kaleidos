@@ -3,7 +3,7 @@
 A simple kaleidoscope effect produced with a bunch of SASS-powered
 CSS rotation and scale transforms.
 
-See it in action here: http://coldhead.github.com/kaleidos/ or here
+See it in action here: http://coldhead.github.io/kaleidos/ or here
 http://gif.ly/
 
 **Suddenly, Convenience!** Add it to your browser here:
